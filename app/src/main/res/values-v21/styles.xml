@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="android:Theme.Material.Light">
+    <style name="AppTheme" parent="android:ThemeOverlay.Material.Dark">
+            <item name="android:colorPrimary">@color/theme_default_primary</item>
+            <item name="android:colorPrimaryDark">@color/theme_default_primary_dark</item>
+            <item name="android:statusBarColor">@color/theme_default_primary_dark</item>
+            <item name="android:colorAccent">@color/fab_color</item>
     </style>
 </resources>
