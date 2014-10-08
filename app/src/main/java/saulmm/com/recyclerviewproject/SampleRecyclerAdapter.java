@@ -17,7 +17,7 @@ public class SampleRecyclerAdapter extends RecyclerView.Adapter<SampleRecyclerAd
     public ViewHolder onCreateViewHolder(ViewGroup parentViewGroup, int i) {
 
         View rowView = LayoutInflater.from (parentViewGroup.getContext())
-            .inflate(R.layout.list_basic_item, null);
+            .inflate(R.layout.list_basic_item, parentViewGroup, false);
 
         return new ViewHolder (rowView);
     }
@@ -36,6 +36,13 @@ public class SampleRecyclerAdapter extends RecyclerView.Adapter<SampleRecyclerAd
         return sampleData.size();
     }
 
+    public void removeData (int position) {
+
+        sampleData.remove(position);
+        notifyItemRemoved(position);
+    }
+
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView textViewSample;
@@ -43,7 +50,8 @@ public class SampleRecyclerAdapter extends RecyclerView.Adapter<SampleRecyclerAd
         public ViewHolder(View itemView) {
             super(itemView);
 
-            textViewSample = (TextView) itemView.findViewById(R.id.textViewSample);
+            textViewSample = (TextView) itemView.findViewById(
+                R.id.textViewSample);
         }
     }
 
