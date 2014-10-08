@@ -42,6 +42,12 @@ public class SampleRecyclerAdapter extends RecyclerView.Adapter<SampleRecyclerAd
         notifyItemRemoved(position);
     }
 
+    public void addItem(int positionToAdd) {
+
+        sampleData.add(positionToAdd, new SampleModel("New element"));
+        notifyItemInserted(positionToAdd);
+    }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
