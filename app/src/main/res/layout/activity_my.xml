@@ -16,5 +16,20 @@
         tools:listitem="@layout/list_basic_item"
         />
 
+    <ImageButton
+        android:id="@+id/fab_add"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ripple"
+        android:stateListAnimator="@anim/anim"
+        android:src="@drawable/ic_action_add"
+        android:elevation="1dp"
+        />
+
 
 </RelativeLayout>
