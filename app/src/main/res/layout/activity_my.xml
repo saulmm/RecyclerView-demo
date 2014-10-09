@@ -10,6 +10,7 @@
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
+        android:alpha="0.7"
         android:elevation="1dp"
         android:background="@drawable/ripple_deletebar"
         >
@@ -19,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="sans-serif-light"
-            android:textSize="28sp"
+            android:textSize="20sp"
             android:textColor="?android:colorForeground"
             android:text="Delete"
             />
