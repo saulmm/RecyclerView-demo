@@ -1,9 +1,12 @@
 package saulmm.com.recyclerviewproject;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,12 +26,14 @@ public class SampleRecyclerAdapter extends RecyclerView.Adapter<SampleRecyclerAd
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
 
         final SampleModel rowData = sampleData.get(position);
         viewHolder.textViewSample.setText(rowData.getSampleText());
+
         viewHolder.itemView.setTag(rowData);
     }
+
 
     @Override
     public int getItemCount() {
