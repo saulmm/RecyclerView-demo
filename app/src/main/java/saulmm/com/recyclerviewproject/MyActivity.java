@@ -31,7 +31,7 @@ public class MyActivity extends Activity {
         fabOutline.setOval(0, 0, fabSize, fabSize);
 
         View fabView = findViewById(R.id.fab_add);
-        fabView.setOutline(fabOutline);
+        //fabView.setOutline(fabOutline);
 
         // RecyclerView
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -69,7 +69,7 @@ public class MyActivity extends Activity {
             }
         });
 
-        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+      /*  recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(int i) {
 
@@ -89,7 +89,7 @@ public class MyActivity extends Activity {
                         showDeleteBar();
                 }
             }
-        });
+        });*/
     }
 
     private void showDeleteBar() {
