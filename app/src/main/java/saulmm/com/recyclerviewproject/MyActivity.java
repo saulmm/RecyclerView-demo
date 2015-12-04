@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewOutlineProvider;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 
@@ -26,12 +27,17 @@ public class MyActivity extends Activity {
 
 
         // Fab button
-        int fabSize = getResources().getDimensionPixelSize(R.dimen.fab_size);
-        Outline fabOutline = new Outline();
-        fabOutline.setOval(0, 0, fabSize, fabSize);
-
+        ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() {
+            @Override
+            public void getOutline(View view, Outline outline) {
+                // Or read size directly from the view's width/height
+                int fabSize = getResources().getDimensionPixelSize(R.dimen.fab_size);
+                Outline fabOutline = new Outline();
+                fabOutline.setOval(0, 0, fabSize, fabSize);
+            }
+        };
         View fabView = findViewById(R.id.fab_add);
-        fabView.setOutline(fabOutline);
+        fabView.setOutlineProvider(viewOutlineProvider);
 
         // RecyclerView
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -69,14 +75,14 @@ public class MyActivity extends Activity {
             }
         });
 
-        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onScrollStateChanged(int i) {
+            public void onScrollStateChanged(RecyclerView v, int i) {
 
             }
 
             @Override
-            public void onScrolled(int dx, int dy) {
+            public void onScrolled(RecyclerView v, int dx, int dy) {
 
                 if (dy > 0) {
 
